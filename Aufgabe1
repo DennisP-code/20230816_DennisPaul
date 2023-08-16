@@ -1,0 +1,118 @@
+Aufgabe 1 am 16.08.2023
+
+
+PS C:\Users\denni> cd fi072022
+PS C:\Users\denni\fi072022> git clone https://github.com/DennisP-code/testOnlineRepoPaul.git
+Cloning into 'testOnlineRepoPaul'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+PS C:\...\fi072022> cd testOnlineRepoPaul
+PS C:\...\fi072022\testOnlineRepoPaul> git branch -m master main
+fatal: No branch named 'master'.
+PS C:\...\fi072022\testOnlineRepoPaul> git branch
+* main
+PS C:\...\fi072022\testOnlineRepoPaul> echo " public class Hello {
+>>     private String firstName = "Dennis";
+>>     private String lastName = "Paul";
+>>     private int age = 30;
+>>
+>>     public void printInfo() {
+>>         System.out.println("Vorname: " + firstName);
+>>         System.out.println("Nachname: " + lastName);
+>>         System.out.println("Alter: " + age);
+>>     }
+>>
+>>     public static void main(String[] args) {
+>>         Hello hello = new Hello();
+>>         hello.printInfo();
+>>     }
+>> }" >> hello.java
+
+PS C:\...\fi072022\testOnlineRepoPaul> git commit -m "Datei Hello.java mit Variablen hinzugefügt"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\...\fi072022\testOnlineRepoPaul> git add hello.java
+PS C:\...\fi072022\testOnlineRepoPaul> git commit -m "Datei Hello.java mit Variablen hinzugefügt"
+[main 9907505] Datei Hello.java mit Variablen hinzugefügt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.java
+PS C:\Users\denni\fi072022\testOnlineRepoPaul> git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS C:\...\fi072022\testOnlineRepoPaul> git checkout newBranch
+error: pathspec 'newBranch' did not match any file(s) known to git
+PS C:\...\fi072022\testOnlineRepoPaul> git checkout -b newBranch
+Switched to a new branch 'newBranch'
+PS C:\...\testOnlineRepoPaul> git add hello.java
+PS C:\...\testOnlineRepoPaul> notepad.exe hello.java
+PS C:\...\testOnlineRepoPaul> git commit -m "eine Platzhalterzeile hinzugefügt"
+On branch newBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\...\fi072022\testOnlineRepoPaul> git add hello.java
+PS C:\...\fi072022\testOnlineRepoPaul> git commit -m "platzhalter zeile hinzugefügt"
+[newBranch db1b042] platzhalter zeile hinzugefügt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\...\fi072022\testOnlineRepoPaul> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS C:\...\fi072022\testOnlineRepoPaul> git merge newBranch
+Updating 9907505..db1b042
+Fast-forward
+ hello.java | Bin 864 -> 934 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\...\fi072022\testOnlineRepoPaul> git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 941 bytes | 941.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/DennisP-code/testOnlineRepoPaul.git
+   fa0372b..db1b042  main -> main
+PS C:\...\fi072022\testOnlineRepoPaul> git branch -d newBranch
+Deleted branch newBranch (was db1b042).
+
+
+Inhalt aus der hello.java
+
+public class Hello {
+    private String firstName = 
+Dennis;
+    private String lastName = Paul;
+    private int age = 30;
+
+    public void printInfo() {
+        System.out.println(Vorname:
+ + firstName);
+        System.out.println(
+Nachname:
+ + lastName);
+        System.out.println(
+Alter:
+ + age);
+    }
+
+    public static void main(String[] args) {
+        Hello hello = new Hello();
+        hello.printInfo();
+    }
+}
+
+
+Das ist die änderung im Branch newBranch

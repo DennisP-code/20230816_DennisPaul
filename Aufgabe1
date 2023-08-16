@@ -1,8 +1,8 @@
 Aufgabe 1 am 16.08.2023
 
 
-PS C:\Users\denni> cd fi072022
-PS C:\Users\denni\fi072022> git clone https://github.com/DennisP-code/testOnlineRepoPaul.git
+PS C:\...> cd fi072022
+PS C:\...\fi072022> git clone https://github.com/DennisP-code/testOnlineRepoPaul.git
 Cloning into 'testOnlineRepoPaul'...
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
